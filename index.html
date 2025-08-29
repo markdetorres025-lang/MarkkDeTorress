@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Website</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./markfolderfinal/bootstrap-5.3.8-dist/css/bootstrap-grid.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./kkk.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="#home" class="logo">Portfolio Website</a>
+    <nav id="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">AboutMe</a>
+      <a href="#education">Education</a>
+      <a href="#others">Others</a>
+     
+    
+      
+    </nav>
+  </header>
+
+  <!-- ===== Home Section ===== -->
+  <section id="home" class="home">
+    <div class="container">
+      <div class="home-content">
+        <span class="badge"><i class="fa-solid fa-sparkles"></i> Welcome</span>
+        <h1>Hi, It's <span>Mark T. De Torres</span></h1>
+        <h3 class="typing">Web Developer  <span id="type"></span></h3>
+        <p>My name is Mark T. De Torres, an aspiring Information Technology professional who dreams of becoming a skilled Web and Mobile Application Developer.I graduated Senior high in Dolores Macasaet National High School, I am passionate about creating innovative solutions that make everyday life easier, more efficient, and more enjoyable. With dedication, curiosity, and a strong work ethic, I continue to shape my journey toward becoming a professional in the IT field.</p>
+        <div class="social">
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <a href="#about" class="btn">Hire me</a>
+       <a href="./resume.jpg" target="_blank" class="btn">Resume</a>
+      </div>
+      <div class="home-img">
+        <img src="./gradpic.jpg" alt="Laptop and workspace" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div class="about-img card">
+        <h2>Skills</h2>
+        <p>
+          <ul class="Skills">
+
+          </ul>
+           <li><strong>Basic Programming</strong></li>
+           <li><strong>Graphic Design using HTML</strong></li>
+      </div>
+      <div class="card">
+        <h2>About Me</h2>
+        <p>
+          <ul class="personal-info">
+  <li><strong>Age:</strong> 25</li>
+  <li><strong>Date of Birth:</strong> <span>September 25, 2004</span></li>
+  <li><strong>Place of Birth:</strong> Candelaria, Quezon</li>
+  <li><strong>Gender:</strong> Male</li>
+  <li><strong>Civil Status:</strong> Single</li>
+  <li><strong>Nationality:</strong> Filipino</li>
+  <li><strong>Address:</strong> Pahinga Norte, Candelaria, Quezon</li>
+  <li><strong>Contact Number:</strong> 09466629874</li>
+  <li><strong>Email Address:</strong> markdetorres@gmail.com</li>
+</ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Education Section ===== -->
+  <section id="education" class="edu">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="item">
+          <h4> College: CSTC(Bachelor of Science in Information Technology)</h4>
+          <h4> -Poblacion 3,Sariaya Quezon</h4>
+          <h4> Secondary:Dolores Macasaet National High School(TVL)</h4>
+          <h4> Primary:Pahinga Norte Elementary School</h4>
+        </div>
+        <div class="item">
+          <h4>Currently in 3rd Year(Ongoing)</h4>
+          <h4>Major in Web and Mobile Develepoment</h4>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Others Section ===== -->
+<section id="others" class="others">
+  <div class="container card flex-container">
+    <div class="text-box">
+      <h2>Excellence Awards</h2>
+      <p>Graduated in Senior High School with honor</p>
+      <p>Best in food designer in JDVP</p>
+    </div>
+    <div class="image-box">
+      <img src="./graduate.jpg" alt="Graduation Picture">
+      <img src="./withhigh.jpg" alt="Honor Picture">
+    </div>
+    </div>
+  <div class="container card flex-container">
+    <div class="text-box">
+      <h2>Hobbies</h2>
+      <p>
+        I enjoy playing basketball because it keeps me active and helps me build teamwork. 
+        It gives me a chance to stay fit while having fun with friends. 
+        During my free time, I also like playing mobile games as a way to relax and sharpen my strategic thinking.
+      </p>
+    </div>
+    <div class="image-box">
+      <img src="./ball.jpg" alt="Basketball">
+      <img src="./ml.jpg" alt="Mobile Legends">
+    </div>
+  </div>
+</section>
+
+  <!-- ===== Script for Active Nav Highlight ===== -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    const makeActive = (id) => {
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+    };
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ makeActive(entry.target.id); }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+</script>
+</body>
+</html>
